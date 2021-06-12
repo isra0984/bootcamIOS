@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIComponents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="646-Rr-oqV">
+                                <rect key="frame" x="102.5" y="433" width="209" height="30"/>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.4941176471" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Eh4-Rf-eOA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="209" id="fE6-EU-zsX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
+                                <state key="normal" title="Cambiar Imagen">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapInBtnSaludar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rKa-d6-5ak"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XbC-lB-bB9">
+                                <rect key="frame" x="82" y="44" width="250" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="bRH-QX-Aqn"/>
+                                    <constraint firstAttribute="height" constant="200" id="e0A-Xh-oKI"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escribe tu nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L3l-M8-xys">
+                                <rect key="frame" x="20" y="304" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UKM-Uv-oaR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gga-af-pbC">
+                                <rect key="frame" x="107" y="479" width="200" height="40"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IIV-ZG-zlf"/>
+                                    <constraint firstAttribute="width" constant="200" id="hf1-4e-OPh"/>
+                                </constraints>
+                                <state key="normal" title="Saludar">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapBtnSaludarDos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nY4-pi-kLX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aqui va ir el saludo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqJ-fg-2vY">
+                                <rect key="frame" x="20" y="577" width="374" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="RBO-xp-oQ2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gga-af-pbC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1NV-EN-TDt"/>
+                            <constraint firstItem="SqJ-fg-2vY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7HY-NP-5IM"/>
+                            <constraint firstItem="gga-af-pbC" firstAttribute="top" secondItem="646-Rr-oqV" secondAttribute="bottom" constant="16" id="ENm-GR-3Pc"/>
+                            <constraint firstItem="646-Rr-oqV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Efa-IP-czB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SqJ-fg-2vY" secondAttribute="trailing" constant="20" id="Qfu-u5-Oow"/>
+                            <constraint firstItem="SqJ-fg-2vY" firstAttribute="top" secondItem="gga-af-pbC" secondAttribute="bottom" constant="58" id="bj0-Fp-D3f"/>
+                            <constraint firstItem="XbC-lB-bB9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cyB-1f-OEI"/>
+                            <constraint firstItem="L3l-M8-xys" firstAttribute="top" secondItem="XbC-lB-bB9" secondAttribute="bottom" constant="60" id="eY4-KV-HPf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L3l-M8-xys" secondAttribute="trailing" constant="20" id="oVv-Bz-ELi"/>
+                            <constraint firstItem="XbC-lB-bB9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="q2J-qI-CAE"/>
+                            <constraint firstItem="L3l-M8-xys" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qxA-fT-oN8"/>
+                            <constraint firstItem="646-Rr-oqV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="z74-CN-ZyR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSaludar" destination="646-Rr-oqV" id="10x-8U-8CS"/>
+                        <outlet property="btnSaludarDos" destination="gga-af-pbC" id="8W2-R5-hqf"/>
+                        <outlet property="contentImage" destination="XbC-lB-bB9" id="7A6-Xz-x0X"/>
+                        <outlet property="lblSaludo" destination="SqJ-fg-2vY" id="4cs-fv-6Ei"/>
+                        <outlet property="txtName" destination="L3l-M8-xys" id="aM4-LC-Lxe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2463768115942031" y="79.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
