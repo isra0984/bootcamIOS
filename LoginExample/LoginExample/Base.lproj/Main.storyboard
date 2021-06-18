@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="LoginExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmR-8c-LeJ">
+                                <rect key="frame" x="72" y="433" width="270" height="30"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="Qdd-vg-cfO"/>
+                                    <constraint firstAttribute="height" constant="30" id="g5e-ai-nH3"/>
+                                </constraints>
+                                <state key="normal" title="Iniciar sesion">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="IniciarSesion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xeD-rU-vSi"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="V59-4Y-Vl4">
+                                <rect key="frame" x="30" y="124" width="354" height="103"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo electrónico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YqO-ay-owO">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="28C-EQ-Giv">
+                                        <rect key="frame" x="0.0" y="69" width="354" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="NmR-8c-LeJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3SK-z5-bPM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V59-4Y-Vl4" secondAttribute="trailing" constant="30" id="Rvy-sz-E8M"/>
+                            <constraint firstItem="NmR-8c-LeJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hSs-ru-zCZ"/>
+                            <constraint firstItem="V59-4Y-Vl4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="p0A-B6-KOY"/>
+                            <constraint firstItem="V59-4Y-Vl4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="ze6-Me-g7g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txtContraseña" destination="28C-EQ-Giv" id="KH5-aP-70P"/>
+                        <outlet property="txtCorreoElectronico" destination="YqO-ay-owO" id="UFV-Ku-WwU"/>
+                        <segue destination="IjS-WP-d9m" kind="presentation" identifier="irAHome" modalPresentationStyle="fullScreen" id="bwT-cH-a9S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="88.392857142857139"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="zAW-rA-XAO">
+            <objects>
+                <viewController id="IjS-WP-d9m" customClass="HomeViewController" customModule="LoginExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Xr-1m-cjr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAQ-z4-zHa">
+                                <rect key="frame" x="20" y="74" width="374" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="8NX-NN-wyI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kki-ye-wQr">
+                                <rect key="frame" x="20" y="802" width="374" height="60"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Qxh-gJ-8Yd"/>
+                                </constraints>
+                                <state key="normal" title="Cerrar sesión">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cerrarSesion:" destination="IjS-WP-d9m" eventType="touchUpInside" id="reL-Du-M39"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rlI-bo-Jcr"/>
+                        <color key="backgroundColor" red="0.22352941179999999" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vAQ-z4-zHa" firstAttribute="top" secondItem="rlI-bo-Jcr" secondAttribute="top" constant="30" id="3kw-TB-4wT"/>
+                            <constraint firstItem="kki-ye-wQr" firstAttribute="leading" secondItem="rlI-bo-Jcr" secondAttribute="leading" constant="20" id="Jrh-eq-iBa"/>
+                            <constraint firstItem="kki-ye-wQr" firstAttribute="bottom" secondItem="rlI-bo-Jcr" secondAttribute="bottom" id="LJ3-PM-yPT"/>
+                            <constraint firstItem="rlI-bo-Jcr" firstAttribute="trailing" secondItem="vAQ-z4-zHa" secondAttribute="trailing" constant="20" id="mWn-Hr-Qvz"/>
+                            <constraint firstItem="vAQ-z4-zHa" firstAttribute="leading" secondItem="rlI-bo-Jcr" secondAttribute="leading" constant="20" id="oZ4-95-Ht6"/>
+                            <constraint firstItem="rlI-bo-Jcr" firstAttribute="trailing" secondItem="kki-ye-wQr" secondAttribute="trailing" constant="20" id="q4L-fM-Kft"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WXW-w7-C0k"/>
+                    <connections>
+                        <outlet property="lblBienvenido" destination="vAQ-z4-zHa" id="5C6-UX-MjH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERr-Pd-z7x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060.8695652173915" y="87.723214285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
