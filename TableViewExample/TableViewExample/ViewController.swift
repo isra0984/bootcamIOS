@@ -7,20 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return frutas.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell()
-        let fruta = frutas[indexPath.row]
-        cell.textLabel?.text = fruta
-        return cell
-    
-    }
+class ViewController: UIViewController {
     
     @IBOutlet weak var listadoFrutas: UITableView!
     
@@ -33,6 +20,30 @@ class ViewController: UIViewController, UITableViewDataSource {
         
     }
 
-
 }
+// MARK: UITableViewDataSource
+extension ViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return frutas.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        print("seccion: \(indexPath.section) y fila: \(indexPath.row)")
+        
+        let cell = UITableViewCell()
+        let fruta = frutas[indexPath.row]
+        cell.textLabel?.text = fruta
+        return cell
+    
+    }
+    
+}
+
+
 
