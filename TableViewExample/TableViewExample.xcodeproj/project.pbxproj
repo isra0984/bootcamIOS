@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7704D4DF26816F3B003D8C65 /* FrutasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704D4DD26816F3B003D8C65 /* FrutasTableViewCell.swift */; };
+		7704D4E026816F3B003D8C65 /* FrutasTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7704D4DE26816F3B003D8C65 /* FrutasTableViewCell.xib */; };
 		77A3995C267C3734000A1F4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3995B267C3734000A1F4D /* AppDelegate.swift */; };
 		77A3995E267C3734000A1F4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3995D267C3734000A1F4D /* SceneDelegate.swift */; };
 		77A39960267C3734000A1F4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3995F267C3734000A1F4D /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7704D4DD26816F3B003D8C65 /* FrutasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrutasTableViewCell.swift; sourceTree = "<group>"; };
+		7704D4DE26816F3B003D8C65 /* FrutasTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrutasTableViewCell.xib; sourceTree = "<group>"; };
 		77A39958267C3733000A1F4D /* TableViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A3995B267C3734000A1F4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77A3995D267C3734000A1F4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				77A39964267C3735000A1F4D /* Assets.xcassets */,
 				77A39966267C3735000A1F4D /* LaunchScreen.storyboard */,
 				77A39969267C3735000A1F4D /* Info.plist */,
+				7704D4DD26816F3B003D8C65 /* FrutasTableViewCell.swift */,
+				7704D4DE26816F3B003D8C65 /* FrutasTableViewCell.xib */,
 			);
 			path = TableViewExample;
 			sourceTree = "<group>";
@@ -124,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7704D4E026816F3B003D8C65 /* FrutasTableViewCell.xib in Resources */,
 				77A39968267C3735000A1F4D /* LaunchScreen.storyboard in Resources */,
 				77A39965267C3735000A1F4D /* Assets.xcassets in Resources */,
 				77A39963267C3734000A1F4D /* Main.storyboard in Resources */,
@@ -137,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7704D4DF26816F3B003D8C65 /* FrutasTableViewCell.swift in Sources */,
 				77A39960267C3734000A1F4D /* ViewController.swift in Sources */,
 				77A3995C267C3734000A1F4D /* AppDelegate.swift in Sources */,
 				77A3995E267C3734000A1F4D /* SceneDelegate.swift in Sources */,

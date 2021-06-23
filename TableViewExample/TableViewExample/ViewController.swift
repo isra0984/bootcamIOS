@@ -17,6 +17,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         listadoFrutas.dataSource = self
+        //registrar la celda
+        let bundle = Bundle(for: FrutasTableViewCell.self)
+        let nib = UINib(nibName: "FrutasTableViewCell", bundle: bundle)
+        listadoFrutas.register(nib, forCellReuseIdentifier: "cellFrutas")
         
     }
 
@@ -36,10 +40,20 @@ extension ViewController: UITableViewDataSource {
         
         print("seccion: \(indexPath.section) y fila: \(indexPath.row)")
         
-        let cell = UITableViewCell()
-        let fruta = frutas[indexPath.row]
-        cell.textLabel?.text = fruta
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "cellFrutas", for: indexPath) as? FrutasTableViewCell {
+            
+            cell.configurar(nombreImagen: "", nombreFruta: frutas[indexPath.row])
+            
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+        
+    
+//        let cell = UITableViewCell()
+//        let fruta = frutas[indexPath.row]
+//        cell.textLabel?.text = fruta
+//        return cell
     
     }
     
