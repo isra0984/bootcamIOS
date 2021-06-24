@@ -10,9 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var listadoFrutas: UITableView!
-    
-//    var frutas: [String] = ["Manzana","Fresa","Mango","Melon","Sandia"]
-    
+        
     var frutas: [Fruta] = []
     var verduras: [Verdura] = []
     
@@ -26,6 +24,8 @@ class ViewController: UIViewController {
         let nib = UINib(nibName: "FrutasTableViewCell", bundle: bundle)
         listadoFrutas.register(nib, forCellReuseIdentifier: "cellFrutas")
         
+        listadoFrutas.register(VerduraTableViewCell.self, forCellReuseIdentifier: "cellVerdura")
+        
         let manzana = Fruta(nombre: "Manzana", nombreImagen: "manzana")
         let fresa = Fruta(nombre: "Fresa", nombreImagen: "fresa")
         let mango = Fruta(nombre: "Mango", nombreImagen: "mango")
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         
         let espinaca = Verdura(nombre: "Espinacas", nombreImagen: "espinaca")
         let lechuga = Verdura(nombre: "Lechuga", nombreImagen: "lechuga")
-        let chile = Verdura(nombre: "Chile", nombreImagen: "Chile")
+        let chile = Verdura(nombre: "Chile", nombreImagen: "chile")
         let pepino = Verdura(nombre: "Pepino", nombreImagen: "pepino")
         let jitomate = Verdura(nombre: "Jitomate", nombreImagen: "jitomate")
         
@@ -51,16 +51,14 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "FRUTAS"
-//    }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let labelTitle = UILabel()
         labelTitle.backgroundColor = .green
         labelTitle.textColor = .systemPink
-        labelTitle.text = "FRUTAS"
+        
+        labelTitle.text = section == 0 ? "FRUTAS" : "VERDURAS"
+        
         labelTitle.textAlignment = .center
         return labelTitle
     }
@@ -73,7 +71,7 @@ extension ViewController: UITableViewDelegate {
         let labelTitle = UILabel()
         labelTitle.backgroundColor = .black
         labelTitle.textColor = .white
-        labelTitle.text = "Aqui termina la seccion de frutas"
+        labelTitle.text = "Aqui termina la seccion de \(section == 0 ? "frutas" : "verduras")"
         labelTitle.textAlignment = .center
         return labelTitle
     }
@@ -102,15 +100,32 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cellFrutas", for: indexPath) as? FrutasTableViewCell {
+        if indexPath.section == 0 {
             
-            let fruta = frutas[indexPath.row]
-            cell.configurar(nombreImagen: fruta.nombreImagen, nombreFruta: fruta.nombre)
-            
-            return cell
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "cellFrutas", for: indexPath) as? FrutasTableViewCell {
+                
+                let fruta = frutas[indexPath.row]
+                cell.configurar(nombreImagen: fruta.nombreImagen, nombreFruta: fruta.nombre)
+                
+                return cell
+                
+            } else {
+                return UITableViewCell()
+            }
             
         } else {
-            return UITableViewCell()
+            
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "cellVerdura") as? VerduraTableViewCell {
+                
+                let verdura = verduras[indexPath.row]
+                cell.configurar(model: verdura)
+                
+                return cell
+                
+            } else {
+                return UITableViewCell()
+            }
+            
         }
         
     }
