@@ -12,10 +12,6 @@ class FrutasTableViewCell: UITableViewCell {
     @IBOutlet weak var imageFruta: UIImageView!
     @IBOutlet weak var nombreFruta: UILabel!
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     func configurar(nombreImagen: String, nombreFruta: String) {
         
         imageFruta.image = UIImage(named: nombreImagen)

@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="FrutasTableViewCell" customModule="TableViewExample" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FrutasTableViewCell" customModule="TableViewExample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -33,10 +33,11 @@
                 <constraints>
                     <constraint firstItem="r2G-0H-2zc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9lx-IG-C4u"/>
                     <constraint firstAttribute="trailing" secondItem="svk-E0-1Yg" secondAttribute="trailing" constant="16" id="Hzl-Le-iuN"/>
+                    <constraint firstItem="svk-E0-1Yg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="JQI-me-OY4"/>
                     <constraint firstItem="svk-E0-1Yg" firstAttribute="leading" secondItem="r2G-0H-2zc" secondAttribute="trailing" constant="10" id="LCB-D3-0w4"/>
-                    <constraint firstAttribute="bottom" secondItem="svk-E0-1Yg" secondAttribute="bottom" constant="5" id="ebf-Vb-Eof"/>
+                    <constraint firstItem="svk-E0-1Yg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dEA-Hg-ogR"/>
                     <constraint firstItem="r2G-0H-2zc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gIy-B4-2uR"/>
-                    <constraint firstItem="svk-E0-1Yg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="ovp-Vn-wzs"/>
+                    <constraint firstAttribute="bottom" secondItem="svk-E0-1Yg" secondAttribute="bottom" constant="5" id="niq-uz-uoz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

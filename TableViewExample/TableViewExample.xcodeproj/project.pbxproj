@@ -15,6 +15,8 @@
 		77A39963267C3734000A1F4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A39961267C3734000A1F4D /* Main.storyboard */; };
 		77A39965267C3735000A1F4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A39964267C3735000A1F4D /* Assets.xcassets */; };
 		77A39968267C3735000A1F4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A39966267C3735000A1F4D /* LaunchScreen.storyboard */; };
+		77D55C202682B7D500FC51AF /* Fruta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D55C1F2682B7D500FC51AF /* Fruta.swift */; };
+		77D55C222682D17500FC51AF /* Verdura.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D55C212682D17500FC51AF /* Verdura.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		77A39964267C3735000A1F4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77A39967267C3735000A1F4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77A39969267C3735000A1F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77D55C1F2682B7D500FC51AF /* Fruta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruta.swift; sourceTree = "<group>"; };
+		77D55C212682D17500FC51AF /* Verdura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verdura.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				77A39969267C3735000A1F4D /* Info.plist */,
 				7704D4DD26816F3B003D8C65 /* FrutasTableViewCell.swift */,
 				7704D4DE26816F3B003D8C65 /* FrutasTableViewCell.xib */,
+				77D55C1F2682B7D500FC51AF /* Fruta.swift */,
+				77D55C212682D17500FC51AF /* Verdura.swift */,
 			);
 			path = TableViewExample;
 			sourceTree = "<group>";
@@ -144,8 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77D55C202682B7D500FC51AF /* Fruta.swift in Sources */,
 				7704D4DF26816F3B003D8C65 /* FrutasTableViewCell.swift in Sources */,
 				77A39960267C3734000A1F4D /* ViewController.swift in Sources */,
+				77D55C222682D17500FC51AF /* Verdura.swift in Sources */,
 				77A3995C267C3734000A1F4D /* AppDelegate.swift in Sources */,
 				77A3995E267C3734000A1F4D /* SceneDelegate.swift in Sources */,
 			);
