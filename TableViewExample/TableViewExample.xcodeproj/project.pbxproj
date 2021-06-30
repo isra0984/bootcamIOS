@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		7704D4DF26816F3B003D8C65 /* FrutasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704D4DD26816F3B003D8C65 /* FrutasTableViewCell.swift */; };
 		7704D4E026816F3B003D8C65 /* FrutasTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7704D4DE26816F3B003D8C65 /* FrutasTableViewCell.xib */; };
+		776BBFE726855D8D0023DEBB /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776BBFE626855D8D0023DEBB /* DetalleViewController.swift */; };
 		777385F326840A5D00FBAF10 /* VerduraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777385F226840A5D00FBAF10 /* VerduraTableViewCell.swift */; };
+		778A2CAF268AAF81001BF1A8 /* RecursosRepositorio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778A2CAE268AAF81001BF1A8 /* RecursosRepositorio.swift */; };
 		77A3995C267C3734000A1F4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3995B267C3734000A1F4D /* AppDelegate.swift */; };
 		77A3995E267C3734000A1F4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3995D267C3734000A1F4D /* SceneDelegate.swift */; };
-		77A39960267C3734000A1F4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3995F267C3734000A1F4D /* ViewController.swift */; };
+		77A39960267C3734000A1F4D /* ListadoFrutasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A3995F267C3734000A1F4D /* ListadoFrutasViewController.swift */; };
 		77A39963267C3734000A1F4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A39961267C3734000A1F4D /* Main.storyboard */; };
 		77A39965267C3735000A1F4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A39964267C3735000A1F4D /* Assets.xcassets */; };
 		77A39968267C3735000A1F4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A39966267C3735000A1F4D /* LaunchScreen.storyboard */; };
+		77A9E9D02686AF1B004426C2 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A9E9CF2686AF1B004426C2 /* SplashViewController.swift */; };
 		77D55C202682B7D500FC51AF /* Fruta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D55C1F2682B7D500FC51AF /* Fruta.swift */; };
 		77D55C222682D17500FC51AF /* Verdura.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D55C212682D17500FC51AF /* Verdura.swift */; };
 /* End PBXBuildFile section */
@@ -23,15 +26,18 @@
 /* Begin PBXFileReference section */
 		7704D4DD26816F3B003D8C65 /* FrutasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrutasTableViewCell.swift; sourceTree = "<group>"; };
 		7704D4DE26816F3B003D8C65 /* FrutasTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrutasTableViewCell.xib; sourceTree = "<group>"; };
+		776BBFE626855D8D0023DEBB /* DetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleViewController.swift; sourceTree = "<group>"; };
 		777385F226840A5D00FBAF10 /* VerduraTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerduraTableViewCell.swift; sourceTree = "<group>"; };
+		778A2CAE268AAF81001BF1A8 /* RecursosRepositorio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursosRepositorio.swift; sourceTree = "<group>"; };
 		77A39958267C3733000A1F4D /* TableViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A3995B267C3734000A1F4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77A3995D267C3734000A1F4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		77A3995F267C3734000A1F4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		77A3995F267C3734000A1F4D /* ListadoFrutasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoFrutasViewController.swift; sourceTree = "<group>"; };
 		77A39962267C3734000A1F4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77A39964267C3735000A1F4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77A39967267C3735000A1F4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77A39969267C3735000A1F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77A9E9CF2686AF1B004426C2 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		77D55C1F2682B7D500FC51AF /* Fruta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruta.swift; sourceTree = "<group>"; };
 		77D55C212682D17500FC51AF /* Verdura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verdura.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,9 +53,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		776BBFEA268571080023DEBB /* Otra */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Otra;
+			sourceTree = "<group>";
+		};
+		778A2CAD268AAF49001BF1A8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				778A2CAE268AAF81001BF1A8 /* RecursosRepositorio.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		77A3994F267C3733000A1F4D = {
 			isa = PBXGroup;
 			children = (
+				776BBFEA268571080023DEBB /* Otra */,
 				77A3995A267C3733000A1F4D /* TableViewExample */,
 				77A39959267C3733000A1F4D /* Products */,
 			);
@@ -66,9 +88,10 @@
 		77A3995A267C3733000A1F4D /* TableViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				778A2CAD268AAF49001BF1A8 /* Model */,
 				77A3995B267C3734000A1F4D /* AppDelegate.swift */,
 				77A3995D267C3734000A1F4D /* SceneDelegate.swift */,
-				77A3995F267C3734000A1F4D /* ViewController.swift */,
+				77A3995F267C3734000A1F4D /* ListadoFrutasViewController.swift */,
 				77A39961267C3734000A1F4D /* Main.storyboard */,
 				77A39964267C3735000A1F4D /* Assets.xcassets */,
 				77A39966267C3735000A1F4D /* LaunchScreen.storyboard */,
@@ -78,6 +101,8 @@
 				77D55C1F2682B7D500FC51AF /* Fruta.swift */,
 				77D55C212682D17500FC51AF /* Verdura.swift */,
 				777385F226840A5D00FBAF10 /* VerduraTableViewCell.swift */,
+				776BBFE626855D8D0023DEBB /* DetalleViewController.swift */,
+				77A9E9CF2686AF1B004426C2 /* SplashViewController.swift */,
 			);
 			path = TableViewExample;
 			sourceTree = "<group>";
@@ -153,9 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				776BBFE726855D8D0023DEBB /* DetalleViewController.swift in Sources */,
 				77D55C202682B7D500FC51AF /* Fruta.swift in Sources */,
 				7704D4DF26816F3B003D8C65 /* FrutasTableViewCell.swift in Sources */,
-				77A39960267C3734000A1F4D /* ViewController.swift in Sources */,
+				77A9E9D02686AF1B004426C2 /* SplashViewController.swift in Sources */,
+				77A39960267C3734000A1F4D /* ListadoFrutasViewController.swift in Sources */,
+				778A2CAF268AAF81001BF1A8 /* RecursosRepositorio.swift in Sources */,
 				77D55C222682D17500FC51AF /* Verdura.swift in Sources */,
 				777385F326840A5D00FBAF10 /* VerduraTableViewCell.swift in Sources */,
 				77A3995C267C3734000A1F4D /* AppDelegate.swift in Sources */,
@@ -307,11 +335,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = TableViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apprenDev.TableViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -325,11 +355,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = TableViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apprenDev.TableViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

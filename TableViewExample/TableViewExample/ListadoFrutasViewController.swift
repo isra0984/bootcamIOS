@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ListadoFrutasViewController: UIViewController {
     
     @IBOutlet weak var listadoFrutas: UITableView!
         
@@ -20,33 +20,67 @@ class ViewController: UIViewController {
         listadoFrutas.dataSource = self
         listadoFrutas.delegate = self
         //registrar la celda
+        
+        // Ubicacion de carpetas en base una clase
         let bundle = Bundle(for: FrutasTableViewCell.self)
         let nib = UINib(nibName: "FrutasTableViewCell", bundle: bundle)
         listadoFrutas.register(nib, forCellReuseIdentifier: "cellFrutas")
         
         listadoFrutas.register(VerduraTableViewCell.self, forCellReuseIdentifier: "cellVerdura")
         
-        let manzana = Fruta(nombre: "Manzana", nombreImagen: "manzana")
-        let fresa = Fruta(nombre: "Fresa", nombreImagen: "fresa")
-        let mango = Fruta(nombre: "Mango", nombreImagen: "mango")
-        let melon = Fruta(nombre: "Melon", nombreImagen: "melon")
-        let sandia = Fruta(nombre: "Sandia", nombreImagen: "sandia")
-                
-        frutas = [manzana, fresa, mango, melon, sandia]
-        
-        let espinaca = Verdura(nombre: "Espinacas", nombreImagen: "espinaca")
-        let lechuga = Verdura(nombre: "Lechuga", nombreImagen: "lechuga")
-        let chile = Verdura(nombre: "Chile", nombreImagen: "chile")
-        let pepino = Verdura(nombre: "Pepino", nombreImagen: "pepino")
-        let jitomate = Verdura(nombre: "Jitomate", nombreImagen: "jitomate")
-        
-        verduras = [espinaca, lechuga, chile, pepino, jitomate]
-        
     }
 
 }
+
+// MARK: Navigation
+extension ListadoFrutasViewController {
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        if identifier.elementsEqual("iradetalle") {
+            
+            if let detalleViewController = segue.destination as? DetalleViewController {
+                
+                if let fruta = sender as? Fruta {
+                    detalleViewController.fruta = fruta
+                } else if let verdura = sender as? Verdura {
+                    detalleViewController.verdura = verdura
+                }
+                
+            }
+
+        }
+        
+    }
+    
+    
+}
+
 // MARK: UITableViewDelegate
-extension ViewController: UITableViewDelegate {
+extension ListadoFrutasViewController: UITableViewDelegate {
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          
+        if indexPath.section == 0 { //Seccion Frutas
+            
+            let fruta = frutas[indexPath.row]
+            print("Nombre fruta: \(fruta.nombre)")
+            performSegue(withIdentifier: "iradetalle", sender: fruta)
+            
+        } else { //Seccion de verduras
+            
+            let verdura = verduras[indexPath.row]
+            print("Nombre verdura: \(verdura.nombre)")
+            performSegue(withIdentifier: "iradetalle", sender: verdura)
+            
+        }
+    
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
@@ -82,7 +116,7 @@ extension ViewController: UITableViewDelegate {
     
 }
 // MARK: UITableViewDataSource
-extension ViewController: UITableViewDataSource {
+extension ListadoFrutasViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
