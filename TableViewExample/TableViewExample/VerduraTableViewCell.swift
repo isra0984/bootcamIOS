@@ -53,7 +53,33 @@ class VerduraTableViewCell: UITableViewCell {
     
     func configurar(model: Verdura) {
         labelNombre.text = model.nombre
-        imagenVerdura.image = UIImage(named: model.nombreImagen)
+        dowloadImage(urlImage: model.nombreImagen)
+    }
+    
+    func dowloadImage(urlImage: String) {
+        
+        guard let url = URL(string: urlImage) else {
+            return
+        }
+        
+        let session = URLSession.shared
+        
+        session.dataTask(with: url) { data, _ , error in
+            
+            if let existError = error {
+                print(existError.localizedDescription)
+            }
+            
+            if let responseData = data {
+                
+                DispatchQueue.main.async {
+                    self.imagenVerdura.image = UIImage(data: responseData)
+                }
+                
+            }
+            
+        }.resume()
+        
     }
     
 }

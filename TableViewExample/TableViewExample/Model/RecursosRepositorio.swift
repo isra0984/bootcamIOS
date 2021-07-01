@@ -11,10 +11,10 @@ class RecursosRepository {
     
     let urlServer: String = "https://run.mocky.io/v3/468070ea-a0ff-4f05-a3b9-4bb74a5ccb57"
     
-    func obtenerRecursos() -> (frutas: [Fruta], verduras: [Verdura]) {
+    func obtenerRecursos(complationHandler: @escaping(_ result: ServiceResponseModel?, _ error: Error?) -> Void) {
         
         guard let url = URL(string: urlServer) else {
-            return ([],[])
+            return
         }
         
         var request = URLRequest(url: url)
@@ -28,22 +28,27 @@ class RecursosRepository {
             
             if let err = error {
                 print(err.localizedDescription)
+                complationHandler(nil, err)
             }
             
             if let dat = data {
                 
                 do {
-                    let json = try JSONSerialization.jsonObject(with: dat, options: [])
-                    print(json)
+                    
+                    let decoder = JSONDecoder()
+                    let responseModel = try decoder.decode(ServiceResponseModel.self, from: dat)
+                    print(responseModel)
+                    complationHandler(responseModel, nil)
+                    
                 } catch {
                     print(error.localizedDescription)
+                    complationHandler(nil, error)
                 }
                 
             }
             
         }.resume()
         
-        return ([],[])
     }
     
 }

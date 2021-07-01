@@ -14,8 +14,35 @@ class FrutasTableViewCell: UITableViewCell {
     
     func configurar(nombreImagen: String, nombreFruta: String) {
         
-        imageFruta.image = UIImage(named: nombreImagen)
         self.nombreFruta.text = nombreFruta
+        dowloadImage(urlImage: nombreImagen)
+        
+    }
+    
+    func dowloadImage(urlImage: String) {
+        
+        guard let url = URL(string: urlImage) else {
+            return
+        }
+        
+        let session = URLSession.shared
+        
+        session.dataTask(with: url) { data, _ , error in
+            
+            if let existError = error {
+                self.imageFruta.image = UIImage(named: "manzana")
+                print(existError.localizedDescription)
+            }
+            
+            if let responseData = data {
+                
+                DispatchQueue.main.async {
+                    self.imageFruta.image = UIImage(data: responseData)
+                }
+                
+            }
+            
+        }.resume()
         
     }
     

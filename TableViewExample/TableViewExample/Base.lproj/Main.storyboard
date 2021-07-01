@@ -81,7 +81,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tbk-fI-u6N">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tbk-fI-u6N" customClass="ImageLoader" customModule="TableViewExample" customModuleProvider="target">
                                 <rect key="frame" x="87" y="50" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="S4M-uN-5gm"/>
@@ -118,8 +118,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imagen" destination="tbk-fI-u6N" id="ca6-jg-YUj"/>
                         <outlet property="lblNombre" destination="gIP-Lq-0RZ" id="gij-BW-GHf"/>
+                        <outlet property="loaderImage" destination="tbk-fI-u6N" id="T3Q-cE-2q6"/>
                         <outlet property="txtDescripcion" destination="1sI-SI-x1A" id="uoE-5n-9Zv"/>
                     </connections>
                 </viewController>

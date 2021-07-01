@@ -9,7 +9,7 @@ import UIKit
 
 class DetalleViewController: UIViewController {
 
-    @IBOutlet weak var imagen: UIImageView!
+    @IBOutlet weak var loaderImage: ImageLoader!
     @IBOutlet weak var lblNombre: UILabel!
     @IBOutlet weak var txtDescripcion: UITextView!
     
@@ -21,17 +21,29 @@ class DetalleViewController: UIViewController {
         
         if let frt = fruta {
             
-            imagen.image = UIImage(named: frt.nombreImagen)
             lblNombre.text = frt.nombre
             txtDescripcion.text = "aqui iria la descripcion de la fruta........"
             
+            guard let url = URL(string: frt.nombreImagen) else {
+                return
+            }
+            
+            loaderImage.loadImageWithUrl(url)
+            
+            
         } else if let vrd = verdura {
                 
-            imagen.image = UIImage(named: vrd.nombreImagen)
             lblNombre.text = vrd.nombre
             txtDescripcion.text = "Aqui iria la descripcion de la verdura......."
+            
+            guard let url = URL(string: vrd.nombreImagen) else {
+                return
+            }
+            
+            loaderImage.loadImageWithUrl(url)
+            
         }
         
     }
-
+    
 }

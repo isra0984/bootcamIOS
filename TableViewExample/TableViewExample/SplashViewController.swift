@@ -16,13 +16,39 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         
         let repositorio = RecursosRepository()
-        repositorio.obtenerRecursos()
-        
-        
-        
-        
-        //obtenerFrutasDelServidor()
-        
+        repositorio.obtenerRecursos { response, error in
+            
+            if let err = error {
+                print(err.localizedDescription)
+            }
+            
+            if let res = response {
+                
+                let frutasService = res.frutas
+                for fruta in frutasService {
+                    
+                    let frutaView = Fruta(nombre: fruta.nombre, nombreImagen: fruta.urlImage)
+                    self.frutas.append(frutaView)
+                    
+                }
+                
+                let verdurasService = res.verduras
+                for verdura in verdurasService {
+                    
+                    let verduraView = Verdura(nombre: verdura.nombre, nombreImagen: verdura.urlImage)
+                    self.verduras.append(verduraView)
+                
+                }
+                
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "iralistado", sender: nil)
+                }
+                
+            }
+            
+            
+        }
+    
     }
     
     func obtenerFrutasDelServidor() {
