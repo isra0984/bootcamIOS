@@ -6,5 +6,6 @@ target 'AlmofireTutorial' do
   use_frameworks!
 
   # Pods for AlmofireTutorial
+  pod 'Alamofire', '~> 5.4'
 
 end

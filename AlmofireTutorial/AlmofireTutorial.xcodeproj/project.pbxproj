@@ -103,6 +103,7 @@
 				778F7650268FE60E00DD8591 /* Sources */,
 				778F7651268FE60E00DD8591 /* Frameworks */,
 				778F7652268FE60E00DD8591 /* Resources */,
+				0A4E539E7C4CFA5069E9A082 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +160,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A4E539E7C4CFA5069E9A082 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlmofireTutorial/Pods-AlmofireTutorial-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlmofireTutorial/Pods-AlmofireTutorial-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlmofireTutorial/Pods-AlmofireTutorial-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9774F8E685FE167E13583113 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
