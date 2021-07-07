@@ -1,0 +1,6 @@
+framework module Pods_IOSParseXMLTutorial {
+  umbrella header "Pods-IOSParseXMLTutorial-umbrella.h"
+
+  export *
+  module * { export * }
+}
