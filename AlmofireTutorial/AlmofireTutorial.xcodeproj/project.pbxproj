@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26162289B5082BE3498ED55E /* Pods_AlmofireTutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A919E22322F34AA42573BC /* Pods_AlmofireTutorial.framework */; };
+		777B6A6E2693D9D000D6DA6D /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777B6A6D2693D9D000D6DA6D /* MovieRepository.swift */; };
 		778F7658268FE60E00DD8591 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778F7657268FE60E00DD8591 /* AppDelegate.swift */; };
 		778F765A268FE60E00DD8591 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778F7659268FE60E00DD8591 /* SceneDelegate.swift */; };
 		778F765C268FE60E00DD8591 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778F765B268FE60E00DD8591 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		15A919E22322F34AA42573BC /* Pods_AlmofireTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlmofireTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A6305C3133AD16CF20633F /* Pods-AlmofireTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlmofireTutorial.release.xcconfig"; path = "Target Support Files/Pods-AlmofireTutorial/Pods-AlmofireTutorial.release.xcconfig"; sourceTree = "<group>"; };
+		777B6A6D2693D9D000D6DA6D /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
 		778F7654268FE60E00DD8591 /* AlmofireTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlmofireTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		778F7657268FE60E00DD8591 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		778F7659268FE60E00DD8591 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				778F7662268FE60F00DD8591 /* LaunchScreen.storyboard */,
 				778F7665268FE60F00DD8591 /* Info.plist */,
 				778F766B268FFA3500DD8591 /* MovieResponseModel.swift */,
+				777B6A6D2693D9D000D6DA6D /* MovieRepository.swift */,
 			);
 			path = AlmofireTutorial;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				778F765C268FE60E00DD8591 /* ViewController.swift in Sources */,
 				778F766C268FFA3500DD8591 /* MovieResponseModel.swift in Sources */,
 				778F7658268FE60E00DD8591 /* AppDelegate.swift in Sources */,
+				777B6A6E2693D9D000D6DA6D /* MovieRepository.swift in Sources */,
 				778F765A268FE60E00DD8591 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
