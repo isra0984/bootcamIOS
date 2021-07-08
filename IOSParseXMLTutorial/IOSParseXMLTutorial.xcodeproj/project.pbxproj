@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		77D5F05C269530450080BAFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77D5F05A269530450080BAFC /* Main.storyboard */; };
 		77D5F05E269530470080BAFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77D5F05D269530470080BAFC /* Assets.xcassets */; };
 		77D5F061269530470080BAFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77D5F05F269530470080BAFC /* LaunchScreen.storyboard */; };
+		77D5F069269541E20080BAFC /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D5F068269541E20080BAFC /* Book.swift */; };
 		E8E85876ABBF7FCAF694A706 /* Pods_IOSParseXMLTutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2633B804C9A7E98150A692 /* Pods_IOSParseXMLTutorial.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		77D5F05D269530470080BAFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77D5F060269530470080BAFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77D5F062269530470080BAFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77D5F068269541E20080BAFC /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		8C3D38D21E94700C0BBC16B0 /* Pods-IOSParseXMLTutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSParseXMLTutorial.debug.xcconfig"; path = "Target Support Files/Pods-IOSParseXMLTutorial/Pods-IOSParseXMLTutorial.debug.xcconfig"; sourceTree = "<group>"; };
 		FDD0CEC3BADD6150FA3E1A21 /* Pods-IOSParseXMLTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSParseXMLTutorial.release.xcconfig"; path = "Target Support Files/Pods-IOSParseXMLTutorial/Pods-IOSParseXMLTutorial.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +72,7 @@
 				77D5F05D269530470080BAFC /* Assets.xcassets */,
 				77D5F05F269530470080BAFC /* LaunchScreen.storyboard */,
 				77D5F062269530470080BAFC /* Info.plist */,
+				77D5F068269541E20080BAFC /* Book.swift */,
 			);
 			path = IOSParseXMLTutorial;
 			sourceTree = "<group>";
@@ -80,7 +83,6 @@
 				8C3D38D21E94700C0BBC16B0 /* Pods-IOSParseXMLTutorial.debug.xcconfig */,
 				FDD0CEC3BADD6150FA3E1A21 /* Pods-IOSParseXMLTutorial.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -206,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77D5F069269541E20080BAFC /* Book.swift in Sources */,
 				77D5F059269530450080BAFC /* ViewController.swift in Sources */,
 				77D5F055269530450080BAFC /* AppDelegate.swift in Sources */,
 				77D5F057269530450080BAFC /* SceneDelegate.swift in Sources */,
