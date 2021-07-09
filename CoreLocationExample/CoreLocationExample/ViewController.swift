@@ -7,15 +7,20 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var lblLocationData: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
     
     var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        lblLocationData.numberOfLines = 0
+        lblLocationData.textAlignment = .center
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -26,7 +31,7 @@ class ViewController: UIViewController {
         
         if CLLocationManager.locationServicesEnabled() {
             
-            locationManager.requestAlwaysAuthorization()
+            locationManager.requestWhenInUseAuthorization()
             
         } else {
             
@@ -41,14 +46,59 @@ extension ViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         
         switch manager.authorizationStatus {
-        case .authorizedAlways:
-            print("always")
-        case .authorizedWhenInUse:
-            print("When use")
+        case .authorizedAlways, .authorizedWhenInUse:
+           
+            locationManager.startUpdatingLocation()
+            
+            guard let currentLocation = locationManager.location else {
+                return
+            }
+            
+            lblLocationData.text = "\(currentLocation.coordinate)"
+            mapView.centerLocation(location: currentLocation)
+            self.geocode(location: currentLocation)
+            
+            print("LOCATION: \(currentLocation)")
+            
         default:
             print("El usuario no permitio la localizacion")
         }
         
+    }
+    
+    
+    func geocode(location: CLLocation) {
+        
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { places, error in
+            
+            guard let placeMark = places?.first, error == nil else {
+                return
+            }
+            
+            let place = Place(coordinate: location.coordinate,
+                              title: placeMark.name,
+                              subtitle: placeMark.subLocality)
+            
+            self.mapView.addAnnotation(place)
+            
+        }
+
+    }
+    
+    
+}
+
+extension MKMapView {
+    
+    func centerLocation(location: CLLocation, regionRadius: CLLocationDistance = 1000) {
+            
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                  latitudinalMeters: regionRadius,
+                                                  longitudinalMeters: regionRadius)
+            
+        
+        setRegion(coordinateRegion, animated: true)
     }
     
 }

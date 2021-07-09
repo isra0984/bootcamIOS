@@ -17,17 +17,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cd-M0-4ba">
-                                <rect key="frame" x="155.5" y="438" width="103.5" height="20.5"/>
+                                <rect key="frame" x="20" y="108" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3lr-tx-qrL">
+                                <rect key="frame" x="0.0" y="136.5" width="414" height="725.5"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1cd-M0-4ba" secondAttribute="trailing" constant="20" id="8HJ-SJ-d4S"/>
                             <constraint firstItem="1cd-M0-4ba" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="94E-hP-Wxa"/>
-                            <constraint firstItem="1cd-M0-4ba" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UnL-H6-Qbp"/>
+                            <constraint firstItem="3lr-tx-qrL" firstAttribute="top" secondItem="1cd-M0-4ba" secondAttribute="bottom" constant="8" id="CtA-el-h8p"/>
+                            <constraint firstItem="3lr-tx-qrL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Nal-1D-iwB"/>
+                            <constraint firstItem="1cd-M0-4ba" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YjO-kd-6Fu"/>
+                            <constraint firstItem="1cd-M0-4ba" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Zzi-k1-wbO"/>
+                            <constraint firstItem="3lr-tx-qrL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fkj-rI-zeq"/>
+                            <constraint firstItem="3lr-tx-qrL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hMA-f1-3JS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Core Location" id="IEj-J0-Tmg">
@@ -39,11 +48,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="lblLocationData" destination="1cd-M0-4ba" id="ZKN-a6-ibT"/>
+                        <outlet property="mapView" destination="3lr-tx-qrL" id="Mll-Sw-yTX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="839" y="84"/>
+            <point key="canvasLocation" x="837.68115942028987" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SBP-Qc-Yi1">
