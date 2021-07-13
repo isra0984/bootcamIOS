@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		776655E82697DE6300728B98 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776655E72697DE6300728B98 /* Place.swift */; };
+		778A2DCA269D159900654713 /* SearchPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778A2DC9269D159900654713 /* SearchPlacesViewController.swift */; };
 		77DD98E22696860C00DE1FB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD98E12696860C00DE1FB0 /* AppDelegate.swift */; };
 		77DD98E42696860C00DE1FB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD98E32696860C00DE1FB0 /* SceneDelegate.swift */; };
 		77DD98E62696860C00DE1FB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD98E52696860C00DE1FB0 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		776655E72697DE6300728B98 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		778A2DC9269D159900654713 /* SearchPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesViewController.swift; sourceTree = "<group>"; };
 		77DD98DE2696860C00DE1FB0 /* CoreLocationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreLocationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DD98E12696860C00DE1FB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77DD98E32696860C00DE1FB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				77DD98EC2696861000DE1FB0 /* LaunchScreen.storyboard */,
 				77DD98EF2696861000DE1FB0 /* Info.plist */,
 				776655E72697DE6300728B98 /* Place.swift */,
+				778A2DC9269D159900654713 /* SearchPlacesViewController.swift */,
 			);
 			path = CoreLocationExample;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				77DD98E22696860C00DE1FB0 /* AppDelegate.swift in Sources */,
 				77DD98E42696860C00DE1FB0 /* SceneDelegate.swift in Sources */,
 				776655E82697DE6300728B98 /* Place.swift in Sources */,
+				778A2DCA269D159900654713 /* SearchPlacesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

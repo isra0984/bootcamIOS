@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     var locationManager: CLLocationManager!
+    var resultSearchController: UISearchController? = nil
+    
+    var searchVC: SearchPlacesViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,31 @@ class ViewController: UIViewController {
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
+        
+        guard let storyboard = self.storyboard,
+              let searchVC = storyboard.instantiateViewController(identifier: "searchPlace") as? SearchPlacesViewController  else {
+            return
+        }
+        
+        self.searchVC = searchVC
+        searchVC.mapRegion = mapView.region
+        
+        resultSearchController = UISearchController(searchResultsController: searchVC)
+        resultSearchController?.searchResultsUpdater = searchVC
+        
+        guard let searchBar = resultSearchController?.searchBar else {
+            return
+        }
+        
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Busca un lugar..."
+        
+        self.navigationItem.searchController = resultSearchController
+        
+        resultSearchController?.hidesNavigationBarDuringPresentation = true
+        resultSearchController?.obscuresBackgroundDuringPresentation = true
+        definesPresentationContext = true
+
         
     }
 
@@ -56,6 +84,14 @@ extension ViewController: CLLocationManagerDelegate {
             
             lblLocationData.text = "\(currentLocation.coordinate)"
             mapView.centerLocation(location: currentLocation)
+
+            let coordinateRegion = MKCoordinateRegion(center: currentLocation.coordinate,
+                                                      latitudinalMeters: 500,
+                                                      longitudinalMeters: 500)
+            
+            searchVC?.mapRegion = coordinateRegion
+            
+            
             self.geocode(location: currentLocation)
             
             print("LOCATION: \(currentLocation)")
@@ -97,7 +133,6 @@ extension MKMapView {
                                                   latitudinalMeters: regionRadius,
                                                   longitudinalMeters: regionRadius)
             
-        
         setRegion(coordinateRegion, animated: true)
     }
     
