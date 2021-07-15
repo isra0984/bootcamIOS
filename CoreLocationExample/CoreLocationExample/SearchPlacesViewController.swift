@@ -8,6 +8,10 @@
 import UIKit
 import MapKit
 
+protocol SearchPlacesViewControllerDelegate: AnyObject  {
+    func setPlaceInMap(place: MKPlacemark)
+}
+
 class SearchPlacesViewController: UIViewController {
 
     @IBOutlet weak var placesTableView: UITableView!
@@ -16,13 +20,30 @@ class SearchPlacesViewController: UIViewController {
     
     var places: [MKMapItem] = []
     
+    weak var delegate: SearchPlacesViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
             
         placesTableView.dataSource = self
+        placesTableView.delegate = self
         
     }
 
+}
+
+extension SearchPlacesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let place = places[indexPath.row]
+        
+        dismiss(animated: true) {
+            self.delegate?.setPlaceInMap(place: place.placemark)
+        }
+        
+    }
+    
 }
 
 extension SearchPlacesViewController: UITableViewDataSource {

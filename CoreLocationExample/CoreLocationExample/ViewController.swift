@@ -18,9 +18,13 @@ class ViewController: UIViewController {
     var resultSearchController: UISearchController? = nil
     
     var searchVC: SearchPlacesViewController?
+    var destinationCoordinate: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView.delegate = self
+        mapView.showsUserLocation = true
         
         lblLocationData.numberOfLines = 0
         lblLocationData.textAlignment = .center
@@ -34,6 +38,8 @@ class ViewController: UIViewController {
         }
         
         self.searchVC = searchVC
+        self.searchVC?.delegate = self
+        
         searchVC.mapRegion = mapView.region
         
         resultSearchController = UISearchController(searchResultsController: searchVC)
@@ -67,6 +73,83 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func navigate(_ sender: Any) {
+    
+        guard let sourceCoordinate = locationManager.location?.coordinate,
+              let destinationCoordinate = self.destinationCoordinate else {
+            return
+        }
+        
+        let sourcePlaceMark = MKPlacemark(coordinate: sourceCoordinate)
+        let destinationPlaceMark = MKPlacemark(coordinate: destinationCoordinate)
+        
+        let sourceItem = MKMapItem(placemark: sourcePlaceMark)
+        let destinationItem = MKMapItem(placemark: destinationPlaceMark)
+        
+        let routeRequest = MKDirections.Request()
+        routeRequest.source = sourceItem
+        routeRequest.destination = destinationItem
+        routeRequest.transportType = .automobile
+        
+        let directions = MKDirections(request: routeRequest)
+        
+        directions.calculate { (response, error) in
+            
+            guard let result = response,
+                  let route = result.routes.first else {
+                return
+            }
+            
+            self.mapView.addOverlay(route.polyline)
+            self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+            
+        }
+    
+    }
+    
+}
+
+extension ViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+         
+        let render = MKPolylineRenderer(overlay: overlay)
+        render.strokeColor = UIColor.systemBlue
+        return render
+        
+    }
+    
+}
+
+extension ViewController: SearchPlacesViewControllerDelegate {
+    
+    func setPlaceInMap(place: MKPlacemark) {
+        
+        mapView.removeAnnotations(mapView.annotations)
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = place.coordinate
+        annotation.title = place.title
+        
+        if let city = place.locality,
+           let state = place.administrativeArea {
+            
+            annotation.subtitle = "\(city) \(state)"
+            
+        }
+        
+        lblLocationData.text = place.title
+    
+        mapView.addAnnotation(annotation)
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: place.coordinate, span: span)
+        mapView.setRegion(region, animated: true)
+        
+        destinationCoordinate = place.coordinate
+        
+    }
+
 }
 
 extension ViewController: CLLocationManagerDelegate {
@@ -84,15 +167,9 @@ extension ViewController: CLLocationManagerDelegate {
             
             lblLocationData.text = "\(currentLocation.coordinate)"
             mapView.centerLocation(location: currentLocation)
-
-            let coordinateRegion = MKCoordinateRegion(center: currentLocation.coordinate,
-                                                      latitudinalMeters: 500,
-                                                      longitudinalMeters: 500)
+            searchVC?.mapRegion = mapView.region
             
-            searchVC?.mapRegion = coordinateRegion
-            
-            
-            self.geocode(location: currentLocation)
+            //self.geocode(location: currentLocation)
             
             print("LOCATION: \(currentLocation)")
             
