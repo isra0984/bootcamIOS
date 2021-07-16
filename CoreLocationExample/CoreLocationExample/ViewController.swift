@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     var searchVC: SearchPlacesViewController?
     var destinationCoordinate: CLLocationCoordinate2D?
     
+    var isNavigate = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,11 +60,12 @@ class ViewController: UIViewController {
         resultSearchController?.obscuresBackgroundDuringPresentation = true
         definesPresentationContext = true
 
+        self.getLocation("")
         
     }
 
     @IBAction func getLocation(_ sender: Any) {
-        
+
         if CLLocationManager.locationServicesEnabled() {
             
             locationManager.requestWhenInUseAuthorization()
@@ -101,10 +104,42 @@ class ViewController: UIViewController {
             }
             
             self.mapView.addOverlay(route.polyline)
-            self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+            
+            let edgeInsets = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
+            self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: edgeInsets, animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.getRouteSteps(route: route)
+            }
             
         }
     
+    }
+ 
+    func getRouteSteps(route: MKRoute) {
+            
+        for monitoredRegion in locationManager.monitoredRegions {
+            locationManager.stopMonitoring(for: monitoredRegion)
+        }
+        
+        for (index, step) in route.steps.enumerated() {
+            let coordinate = step.polyline.coordinate
+            let region = CLCircularRegion(center: coordinate, radius: 20, identifier: "\(index)")
+            locationManager.startMonitoring(for: region)
+        }
+        
+        guard let coordinate = locationManager.location?.coordinate else {
+            return
+        }
+        
+        let coordinateRegion = MKCoordinateRegion(center: coordinate,
+                                                  latitudinalMeters: 500,
+                                                  longitudinalMeters: 500)
+        
+        mapView.setRegion(coordinateRegion, animated: true)
+        
+        isNavigate = true
+        
     }
     
 }
@@ -129,13 +164,10 @@ extension ViewController: SearchPlacesViewControllerDelegate {
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = place.coordinate
-        annotation.title = place.title
-        
-        if let city = place.locality,
-           let state = place.administrativeArea {
-            
-            annotation.subtitle = "\(city) \(state)"
-            
+        annotation.title = place.name
+                
+        if let name = place.name, let street = place.thoroughfare {
+            annotation.subtitle = "\(name)\n\(street)"
         }
         
         lblLocationData.text = place.title
@@ -148,11 +180,33 @@ extension ViewController: SearchPlacesViewControllerDelegate {
         
         destinationCoordinate = place.coordinate
         
+        guard let sourceLocation = locationManager.location else { return }
+        
+        let distance: CLLocationDistance = place.location?.distance(from: sourceLocation) ?? 0.0
+        let dis: CLLocationDistance = distance/1000
+        let formatDistance = String(format: "Distance : %.2f", dis)
+        lblLocationData.text = "\(formatDistance) KM"
+        
     }
 
 }
 
 extension ViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        guard let location = locations.last,
+              isNavigate else {
+            return
+        }
+
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                  latitudinalMeters: 500,
+                                                  longitudinalMeters: 500)
+        
+        mapView.setRegion(coordinateRegion, animated: true)
+        
+    }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         
