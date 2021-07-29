@@ -12,16 +12,37 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tareasTableView: UITableView!
     
-    var tareas: [Tarea] = []
     var tasks: [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tareasTableView.dataSource = self
+        
+        getInfoStorage()
                 
     }
     
+    func getInfoStorage() {
+
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fecherRequest = NSFetchRequest<Task>(entityName: "Task")
+        
+        do {
+            
+            tasks = try managedContext.fetch(fecherRequest)
+            self.tareasTableView.reloadData()
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+    }
+
     func guardarTarea(tarea: Tarea) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
